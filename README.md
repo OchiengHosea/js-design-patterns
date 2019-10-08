@@ -29,3 +29,5 @@ Behavioral - How object relate to each other and how they operate
 	- Command Pattern
 	- Mediator Pattern
 	- Observer Pattern
+
+Note that content is upgraded to ES6 Syntax in some instances
