@@ -1,33 +1,34 @@
-practical design patterns in Javascript
-Design Patterns - Christopher Alexander, through A Pattern Language
+// Constructor Pattern
+// used to create new objects with their own object scope
 
-Designing Service Layer - Module Pattern
-Overlay complicatef object interfaces - Facade Pattern
-Visoilit into State Changes - Observer 
+// If you put the 'new' keyword before a function, it will create a new Object
+<h2>Constructor Pattern</h2>
+used to create new objects with their own object scope
 
-What constitutes a pattern
+If you put the 'new' keyword before a function, 
+ - it will create a new Object
+ - It links to an Oject prototype
+ - Binds this to the new Object Scope
+ - implicitly returns this
 
--It Solves a problem
--It is proven concept
--The solution is not obvious
--It describes a relationship
--It has a significant hunam component
 
-Types of Design Patterns
-Creation - deals with the creation of new Object
-	- Constructor
-	- Module
-	- Factory
-	- Singleton
-	
-Structural - Make up of the actual Object
-	- Decorator Pattern
-	- Facade Pattern
-	- Flyweight Pattern
 
-Behavioral - How object relate to each other and how they operate
-	- Command Pattern
-	- Mediator Pattern
-	- Observer Pattern
+function ObjectName(param1, param2) {
+	this.param1 = param1;
+	this.param2 = param2;
+	this.toString = function () {
+		return this.param1 + ' ' + this.param2;
+	}
+}
 
-Note that content is upgraded to ES6 Syntax in some instances
+<b>Drawbacks</b>
+The function in the Object is recreated everytime you instantiatiate a new object using the above method.
+
+To solve this, we use Prototype
+
+<h2>Module Pattern</h2>
+Module patern encapsulates a group of method that are alike
+like a group of methods for api calls or database calls
+
+So in this we're gonna create module to simulate database transaction
+
